@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #C8DFDB;
+    color: #17252a;
+    overflow-x: hidden;
+}
+
+nav{
+    background-color: #66A3BF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1rem clamp(1rem, 5vw, 5rem);
+}
+
+.logo h1{
+    font-size: clamp(1.1rem, 2.5vw, 1.7rem);
+}
+
+.menu a{
+    display: inline-block;
+    margin: 0.25rem;
+    text-decoration: none;
+    color: black;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.menu a:hover{
+    background-color: #3368A0;
+    color: #F2EFE7;
+}
+
+main{
+    display: flex;
+    align-items: center;
+    gap: clamp(2rem, 6vw, 5rem);
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 5vw, 5rem);
+}
+
+article{
+    flex: 1 1 60%;
+}
+
+aside{
+    display: flex;
+    justify-content: flex-end;
+    flex: 1 1 40%;
+}
+
+aside img{
+    width: min(100%, 300px);
+    border-radius: 2rem 0 2rem 0;
+}
+
+article h1{
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+article p{
+    line-height: 1.7;
+}
+
+.button{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 3rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.button a{
+    display: inline-block;
+    text-decoration: none;
+    color: #3368A0;
+    border: 2px solid #66A3BF;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.button a:hover{
+    background-color: #F2EFE7;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+#skills{
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: clamp(3rem, 8vw, 5rem) clamp(1rem, 5vw, 5rem);
+}
+
+#skills h2{
+    text-align: center;
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+}
+
+#skills p{
+    max-width: 900px;
+    margin: 0 auto 3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    line-height: 1.7;
+}
+
+.card{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.item img{
+    width: 30px;
+}
+
+.item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    flex: 1 1 180px;
+    max-width: 240px;
+    padding: 10px 20px;
+    margin: 10px;
+    border: 2px solid #3368A0;
+    border-radius: 1rem;
+}
+
+#testimoni{
+    max-width: 1400px;
+    margin: 0 auto 5rem;
+    padding: 0 clamp(1rem, 5vw, 5rem);
+    text-align: center;
+}
+
+#testimoni h2{
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+    margin-bottom: 30px;
+}
+
+.testimoni-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.testimoni-card{
+    background-color: #F2EFE7;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    flex: 1 1 280px;
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimoni-card:hover{
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+.profil-img img {
+    width: 120px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+    margin-bottom: 1rem;
+}
+
+.profile-info{
+    text-align: center;
+}
+
+.profile-info h3{
+    margin: 0.5rem 0 0.2rem;
+    font-size: 1.2rem;
+}
+
+.profile-info .tittle{
+    color: black;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.profile-info .message{
+    font-size: 0.9rem;
+    color: #444;
+    font-style: italic;
+}
+
+footer{
+    background-color: #3368A0;
+    color: white;
+}
+
+.footer-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 30px;
+}
+
+.school,
+.contact{
+    max-width: 100%;
+}
+
+.school iframe{
+    display: block;
+    width: min(100%, 300px);
+}
+
+.footer-container .contact a{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    margin: 0.35rem;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid #66A3BF;
+}
+
+.footer-container .school h2{
+    margin: 20px;
+    color: white;
+}
+
+.footer-container .contact a:hover{
+    background-color: white;
+    color: black;
+}
+
+.copyright{
+    justify-items: center;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 768px){
+    nav{
+        flex-direction: column;
+        text-align: center;
+    }
+
+    main{
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    aside{
+        justify-content: center;
+        width: 100%;
+    }
+
+    article{
+        width: 100%;
+    }
+
+    .button{
+        justify-content: center;
+        margin-top: 2rem;
+    }
+
+    .footer-container{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px){
+    nav{
+        padding: 1rem;
+    }
+
+    .menu a{
+        padding: 0.35rem;
+        font-size: 0.9rem;
+    }
+
+    main,
+    #skills,
+    #testimoni{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    article h1{
+        line-height: 1.25;
+    }
+
+    .button a{
+        flex: 1 1 120px;
+    }
+
+    .item,
+    .testimoni-card{
+        width: 100%;
+        max-width: none;
+    }
+
+    .footer-container{
+        padding: 2rem 1rem;
+    }
+}
