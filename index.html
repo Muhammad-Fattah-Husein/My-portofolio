@@ -141,12 +141,12 @@
       <div class="footer-container">
 
         <section class="contact contact-form">
-        <form action="https://formspree.io/f/mnpqazrl" method="post">
+        <form id="contactForm" action="https://formspree.io/f/mnpqazrl" method="POST">
         <label for="Nama">Nama</label>
-        <input type="text" name="nama" id="name" placeholder="Masukkan Nama">
+        <input type="text" name="nama" id="name" placeholder="Masukkan Nama" required>
 
         <label for="Email">E-mail</label>
-        <input type="email" name="email" id="email" placeholder="Masukkan E-mail">
+        <input type="email" name="email" id="email" placeholder="Masukkan E-mail" required>
 
         <label for="Keperluan">Keperluan</label>
         <select name="Keperluan" id="Keperluan">
@@ -156,12 +156,13 @@
         </select>
 
         <label for="pesan">Pesan</label>
-        <textarea name="pesan" id="pesan" rows="4" placeholder="Pesan dan Kesan"></textarea>
+        <textarea name="pesan" id="pesan" rows="4" placeholder="Pesan dan Kesan" required></textarea>
 
         <div class="form-actions">
           <button type="submit">Kirim Pesan</button>
           <button type="reset">Gak Jadi Deh</button>
         </div>
+        <p id="formStatus" aria-live="polite"></p>
         </form>
         </section>
 
@@ -182,6 +183,41 @@
         </div>
 
     </footer>
+
+    <script>
+      const contactForm = document.getElementById("contactForm");
+      const formStatus = document.getElementById("formStatus");
+
+      if (contactForm) {
+        contactForm.addEventListener("submit", async (event) => {
+          event.preventDefault();
+
+          formStatus.textContent = "Mengirim pesan...";
+          formStatus.style.color = "#ffbf69";
+
+          try {
+            const response = await fetch(contactForm.action, {
+              method: "POST",
+              body: new FormData(contactForm),
+              headers: {
+                Accept: "application/json",
+              },
+            });
+
+            if (response.ok) {
+              formStatus.textContent = "Pesan berhasil dikirim! Terima kasih.";
+              formStatus.style.color = "#4ade80";
+              contactForm.reset();
+            } else {
+              throw new Error("Request failed");
+            }
+          } catch (error) {
+            formStatus.textContent = "Maaf, pesan gagal dikirim. Silakan coba lagi.";
+            formStatus.style.color = "#ff6b6b";
+          }
+        });
+      }
+    </script>
 
   </body>
 
